@@ -1,0 +1,16 @@
+ua:
+  products:
+    index:
+      products: Продукти
+  carts:
+    add:
+      products_added: 'Продукти додані у кошик'
+      list:
+        header:
+            zero: У кошику немає продуктів
+            one: Продукт у кошику
+            other: Продвукти у кошику
+  activerecord:
+    attributes:
+      product:
+        price: Ціна

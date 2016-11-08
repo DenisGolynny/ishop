@@ -1,0 +1,28 @@
+%div{id:"notice", class:'alert'}= notice
+
+.container-fluid
+    .panel.panel-default
+        .panel-heading
+            = t('.products')
+        %table.table
+            %thead
+                %tr
+                    %th #
+                    %th= link_to 'Name', :sort => 'name'
+                    %th= link_to 'Price', :sort => 'price'
+                    %th Description
+
+            %tbody
+            - @products.each do |product|
+                %tr
+                    %th{:scope => "row"} 1
+                    %td= product.name
+                    %td= product.price
+                    %td= product.description
+                    %td= link_to t('.Show'), product, class: 'btn btn-info'
+                    %td= link_to 'Buy', add_cart_path(product_id: product.id), remote: true, class: 'btn btn-success'
+                    %td= link_to 'Destroy', product, method: :delete, class: 'btn btn-danger'
+
+    %br
+    %td= link_to 'New Product', new_product_path, class: 'btn btn-default'
+
